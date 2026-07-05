@@ -1,0 +1,131 @@
+/* ResolveHub UI polish */
+:root {
+  --rh-bg: #f4f7fb;
+  --rh-surface: #ffffff;
+  --rh-primary: #155eef;
+  --rh-primary-dark: #0f3f9f;
+  --rh-text: #172033;
+  --rh-border: #dbe3ef;
+  --rh-shadow: 0 14px 34px rgba(23, 32, 51, 0.12);
+}
+
+body {
+  background: var(--rh-bg);
+  color: var(--rh-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a { color: var(--rh-primary); }
+a:hover, a:focus { color: var(--rh-primary-dark); }
+
+.header .navbar-inner { box-shadow: 0 8px 28px rgba(23, 32, 51, 0.08); }
+.header-seperation { background: linear-gradient(135deg, #10213f 0%, #155eef 100%); }
+
+.resolvehub-brand {
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  min-height: 60px;
+  padding: 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.resolvehub-brand:hover, .resolvehub-brand:focus { color: #fff; text-decoration: none; }
+.resolvehub-brand span {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.page-sidebar {
+  background: #111827;
+  box-shadow: 10px 0 30px rgba(17, 24, 39, 0.12);
+}
+
+.page-sidebar .page-sidebar-wrapper > ul > li > a,
+.page-sidebar ul li a {
+  border-radius: 6px;
+  margin: 3px 10px;
+  color: #d7deea;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.page-sidebar .page-sidebar-wrapper > ul > li > a:hover,
+.page-sidebar ul li a:hover,
+.page-sidebar ul li.start > a {
+  background: rgba(21, 94, 239, 0.18);
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.user-info-wrapper { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.page-content .content { padding: 82px 28px 28px; }
+.page-title h3, .page-title { color: var(--rh-text); font-weight: 700; }
+
+.tiles {
+  border-radius: 8px;
+  box-shadow: var(--rh-shadow);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.tiles:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(23, 32, 51, 0.16);
+}
+
+.panel, .grid.simple, .table-responsive, .login-container {
+  border: 1px solid var(--rh-border);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(23, 32, 51, 0.08);
+}
+
+.login-container {
+  background: var(--rh-surface);
+  margin-top: 8%;
+  padding: 34px 20px;
+}
+
+.error-body { background: linear-gradient(135deg, #eef4ff 0%, #f7fafc 55%, #eefaf6 100%); }
+
+.form-control {
+  border-color: var(--rh-border);
+  border-radius: 6px;
+  box-shadow: none;
+  min-height: 38px;
+}
+
+.form-control:focus {
+  border-color: var(--rh-primary);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.14);
+}
+
+.btn-primary, .btn-success {
+  border-radius: 6px;
+  border-color: var(--rh-primary);
+  background: var(--rh-primary);
+  box-shadow: 0 8px 18px rgba(21, 94, 239, 0.2);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus,
+.btn-success:hover, .btn-success:focus {
+  background: var(--rh-primary-dark);
+  border-color: var(--rh-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15, 63, 159, 0.24);
+}
+
+table.dataTable, .table { background: var(--rh-surface); }
+.breadcrumb { background: transparent; padding-left: 0; }
+
+@media (max-width: 767px) {
+  .resolvehub-brand { font-size: 18px; padding: 0 12px; }
+  .page-content .content { padding: 76px 16px 20px; }
+  .login-container { margin-top: 24px; }
+}
