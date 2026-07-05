@@ -22,15 +22,13 @@ include("dbconnection.php");
 <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
-<link href="assets/css/resolvehub.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/resolvehub.css?v=20260706-menu1" rel="stylesheet" type="text/css"/>
 </head>
-<body class="">
+<body class="dashboard-page">
 <?php include("header.php");?>
 <div class="page-container row-fluid">	
 	<?php include("leftbar.php");?>
 	<div class="clearfix"></div>
-  </div>
-  </div>
   <a href="#" class="scrollup">Scroll</a>
    <div class="footer-widget">		
 	<div class="progress transparent progress-small no-radius no-margin">
@@ -115,14 +113,14 @@ include("dbconnection.php");
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row visitor-graph-row">
           <div class="col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-default visitor-graph-panel">
               <div class="panel-heading">
                 <h3 class="panel-title">Daily Visitor Graph</h3>
               </div>
               <div class="panel-body">
-                <div id="dashboard-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                <div id="dashboard-chart"></div>
               </div>
             </div>
           </div>
@@ -181,13 +179,28 @@ chartData.push(<?php echo $count; ?>);
 <?php } ?>
 document.addEventListener('DOMContentLoaded', function () {
     Highcharts.chart('dashboard-chart', {
-        title: { text: 'Daily Visitors Chart for <?php echo date("F Y"); ?>' },
-        xAxis: { categories: chartCategories },
+        chart: {
+            backgroundColor: 'transparent',
+            spacing: [18, 18, 18, 18]
+        },
+        title: { text: 'Daily Visitors for <?php echo date("F Y"); ?>' },
+        credits: { enabled: false },
+        xAxis: {
+            categories: chartCategories,
+            tickInterval: 2
+        },
         yAxis: {
             min: 0,
+            allowDecimals: false,
             title: { text: 'Visitors Count' }
         },
         tooltip: { valueSuffix: ' Users' },
+        plotOptions: {
+            series: {
+                color: '#174aa8',
+                marker: { radius: 3 }
+            }
+        },
         series: [{ name: 'Visitors', data: chartData }]
     });
 });

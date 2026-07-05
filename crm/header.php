@@ -9,7 +9,7 @@
       <a href="dashboard.php" class="resolvehub-brand">ResolveHub</a>
       <ul class="nav pull-right notifcation-center">
         <li class="dropdown" id="header_task_bar"> <a href="dashboard.php" class="dropdown-toggle active" data-toggle="">
-          <div class="iconset top-home"></div>
+          <i class="fa fa-home rh-header-icon" aria-hidden="true"></i>
           </a> </li>
       
       </ul>
@@ -22,7 +22,7 @@
       <div class="pull-right">
         <ul class="nav quick-section ">
           <li class="quicklinks"> <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
-            <div class="iconset top-settings-dark "></div>
+            <i class="fa fa-cog rh-settings-icon" aria-hidden="true"></i>
             </a>
             <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
               <li><a href="profile.php"> My Account</a> </li>

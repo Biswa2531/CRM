@@ -45,8 +45,6 @@ echo "<script>alert('Your profile updated successfully.');</script>";
 <div class="page-container row-fluid">
 	<?php include("leftbar.php");?>
 	<div class="clearfix"></div>
-  </div>
-  </div>
   <a href="#" class="scrollup">Scroll</a>
    <div class="footer-widget">		
 	<div class="progress transparent progress-small no-radius no-margin">

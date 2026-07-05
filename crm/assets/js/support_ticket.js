@@ -70,8 +70,50 @@ $('#new-ticket-form').validate({
             }
     });
 
-     $('.grid .clickable').on('click', function () {
-          var el = jQuery(this).parents(".grid").children(".grid-body");
-		  el.slideToggle(200);
-    });		
+    // Expand/collapse ticket details with ARIA updates and chevron rotation
+    $('.grid .clickable').on('click', function (e) {
+        // allow direct clicks on inner buttons to work separately
+        if ($(e.target).closest('.toggle-btn').length) return;
+        var grid = jQuery(this).parents('.grid');
+        var el = grid.children('.grid-body');
+        var bodyId = this.getAttribute('aria-controls');
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        el.slideToggle(200);
+        // toggle attributes and icon after animation
+        $(el).promise().done(function(){
+          var newExpanded = !expanded;
+          jQuery(e.currentTarget).attr('aria-expanded', newExpanded);
+          var btn = jQuery(e.currentTarget).find('.toggle-btn');
+          btn.attr('aria-expanded', newExpanded);
+          btn.find('.toggle-icon').toggleClass('open', newExpanded);
+        });
+    });
+
+    // Also handle clicks on the explicit toggle button (chevron)
+    $(document).on('click', '.toggle-btn', function (e) {
+       e.stopPropagation();
+       var btn = $(this);
+       var controls = btn.attr('aria-controls');
+       var target = $('#' + controls);
+       var expanded = btn.attr('aria-expanded') === 'true';
+       target.slideToggle(200);
+       var newExpanded = !expanded;
+       btn.attr('aria-expanded', newExpanded);
+       btn.closest('.clickable').attr('aria-expanded', newExpanded);
+       btn.find('.toggle-icon').toggleClass('open', newExpanded);
+    });
+
+    // Open ticket details in a modal when the view action is clicked
+    $(document).on('click', '.view.open-modal', function (e) {
+        e.preventDefault();
+        var btn = $(this);
+        var ticketId = btn.data('ticket-id');
+        var grid = btn.closest('.grid');
+        var title = grid.find('h4.semi-bold').first().text().trim();
+        var body = grid.find('.grid-body').first().html();
+        if (!body) body = '<p>No details available.</p>';
+        $('#ticketModalLabel').text(title + ' — Ticket #' + ticketId);
+        $('#ticketModalBody').html(body);
+        $('#ticketModal').modal('show');
+    });
 });

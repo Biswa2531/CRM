@@ -1,10 +1,10 @@
 /* ResolveHub UI polish */
 :root {
-  --rh-bg: #f4f7fb;
+  --rh-bg: #e8edf2;
   --rh-surface: #ffffff;
   --rh-primary: #155eef;
   --rh-primary-dark: #0f3f9f;
-  --rh-text: #172033;
+  --rh-text: #061323;
   --rh-border: #dbe3ef;
   --rh-shadow: 0 14px 34px rgba(23, 32, 51, 0.12);
 }
@@ -18,15 +18,23 @@ body {
 a { color: var(--rh-primary); }
 a:hover, a:focus { color: var(--rh-primary-dark); }
 
-.header .navbar-inner { box-shadow: 0 8px 28px rgba(23, 32, 51, 0.08); }
-.header-seperation { background: linear-gradient(135deg, #10213f 0%, #155eef 100%); }
+.header .navbar-inner {
+  background: #fff !important;
+  box-shadow: none;
+  min-height: 78px;
+}
+
+.header-seperation {
+  background: #174aa8 !important;
+  height: 78px;
+}
 
 .resolvehub-brand {
   color: #fff;
   display: inline-flex;
   align-items: center;
   min-height: 60px;
-  padding: 0 18px;
+  padding: 9px 20px;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0;
@@ -43,29 +51,68 @@ a:hover, a:focus { color: var(--rh-primary-dark); }
 }
 
 .page-sidebar {
-  background: #111827;
-  box-shadow: 10px 0 30px rgba(17, 24, 39, 0.12);
+  background: #191c22 !important;
+  box-shadow: none;
+}
+
+.page-sidebar .page-sidebar-wrapper > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 18px;
+}
+
+.page-sidebar .page-sidebar-wrapper > ul > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .page-sidebar .page-sidebar-wrapper > ul > li > a,
 .page-sidebar ul li a {
   border-radius: 6px;
-  margin: 3px 10px;
-  color: #d7deea;
+  display: block;
+  margin: 3px 8px 8px 12px;
+  padding: 11px 14px !important;
+  color: #d6dbe5;
+  font-size: 15px;
   transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.page-sidebar .page-sidebar-wrapper > ul > li > a i,
+.page-sidebar ul li a .fa,
+.page-sidebar ul li a [class^="icon-"],
+.page-sidebar ul li a [class*=" icon-"] {
+  margin-right: 8px;
 }
 
 .page-sidebar .page-sidebar-wrapper > ul > li > a:hover,
 .page-sidebar ul li a:hover,
 .page-sidebar ul li.start > a {
-  background: rgba(21, 94, 239, 0.18);
+  background: #1b315c;
   color: #fff;
   transform: translateX(2px);
 }
 
 .user-info-wrapper { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-.page-content .content { padding: 82px 28px 28px; }
-.page-title h3, .page-title { color: var(--rh-text); font-weight: 700; }
+.page-content {
+  background: var(--rh-bg) !important;
+  min-height: calc(100vh - 78px);
+}
+
+.page-content .content {
+  padding: 28px 30px 32px;
+}
+
+.page-title h3, .page-title {
+  color: var(--rh-text);
+  font-weight: 700;
+}
+
+.page-title h3 {
+  display: block;
+  margin: 0 0 16px;
+  font-size: 25px;
+}
 
 .tiles {
   border-radius: 8px;
@@ -74,9 +121,97 @@ a:hover, a:focus { color: var(--rh-primary-dark); }
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
+.tiles.blue { background: #0798d8 !important; }
+.tiles.green { background: #11a99a !important; }
+.tiles.red { background: #f25757 !important; }
+.tiles.purple { background: #78628c !important; }
+
 .tiles:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 42px rgba(23, 32, 51, 0.16);
+}
+
+/* Add consistent spacing between dashboard tiles */
+.page-title .row {
+  margin-left: -11px;
+  margin-right: -11px;
+}
+
+.page-title .row > [class*="col-"] {
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.page-title .tiles { margin-bottom: 18px; }
+
+/* Slightly larger tile body for dashboard look */
+.tiles .tiles-body {
+  padding: 24px 26px 18px;
+  min-height: 106px;
+}
+
+.tiles .heading {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-shadow: none;
+}
+
+.tiles .heading a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.tiles .progress {
+  background: rgba(0, 0, 0, 0.22) !important;
+  height: 4px;
+  margin: 9px 0 14px;
+  width: 68%;
+}
+
+.tiles .progress-bar-white {
+  background-color: #fff !important;
+}
+
+/* Neutralize legacy negative margin on tiles to prevent alignment issues */
+.tiles.added-margin { margin-right: 0 !important; }
+
+/* Ensure charts scale to their panel width on small screens */
+#dashboard-chart {
+  box-sizing: border-box;
+  height: 400px;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.visitor-graph-row {
+  margin-top: 12px;
+}
+
+.visitor-graph-panel {
+  background: #fff;
+  border: 1px solid var(--rh-border);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(23, 32, 51, 0.08);
+  overflow: hidden;
+}
+
+.visitor-graph-panel .panel-heading {
+  background: #fff;
+  border-bottom: 1px solid var(--rh-border);
+  padding: 14px 18px;
+}
+
+.visitor-graph-panel .panel-title {
+  color: var(--rh-text);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.visitor-graph-panel .panel-body {
+  padding: 12px 16px 18px;
 }
 
 .panel, .grid.simple, .table-responsive, .login-container {
@@ -128,4 +263,197 @@ table.dataTable, .table { background: var(--rh-surface); }
   .resolvehub-brand { font-size: 18px; padding: 0 12px; }
   .page-content .content { padding: 76px 16px 20px; }
   .login-container { margin-top: 24px; }
+}
+
+/* Ticket header toggle styles */
+.grid-title { padding: 16px 18px; }
+.grid .grid-title .toggle-btn {
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .12s ease, transform .12s ease;
+}
+.grid .grid-title .toggle-btn:focus { outline: none; box-shadow: 0 6px 18px rgba(21,94,239,0.12); }
+.toggle-icon { transition: transform .18s ease; color: #6b7280; }
+.toggle-icon.open { transform: rotate(180deg); color: var(--rh-primary-dark); }
+
+/* Slightly tighter card spacing to match dashboard */
+.grid.simple.no-border { margin-bottom: 18px; padding: 0; }
+.grid .grid-title h4 { margin: 0 0 6px 0; }
+.grid .grid-title p { color: #475569; margin: 0; }
+.label-important { background:#ef4444; color:#fff; padding:4px 8px; border-radius:4px; font-size:12px; }
+
+@media (max-width: 991px) {
+  .page-content .content { padding: 72px 12px 18px; }
+}
+
+/* Ticket card tile styles to match dashboard widgets */
+.ticket-card { border-radius: 8px; overflow: hidden; background: #fff; display:block; box-shadow: 0 12px 30px rgba(23,32,51,0.06); }
+.ticket-card .grid-title { padding: 14px 18px; display:flex; align-items:center; }
+.ticket-card .grid-body { padding: 14px 18px; background: #fafafa; }
+.ticket-card.status-open .grid-title { border-left: 6px solid #10b981; }
+.ticket-card.status-pending .grid-title { border-left: 6px solid #f59e0b; }
+.ticket-card.status-in-progress .grid-title { border-left: 6px solid #6366f1; }
+.ticket-card.status-closed .grid-title { border-left: 6px solid #6b7280; }
+.ticket-card .grid-title .text-success { color: #0b5a3c; font-weight:600; }
+.ticket-card .actions a.view { color: #374151; }
+.ticket-card .grid-title .label { margin-left:8px; }
+
+/* compact layout when many tickets */
+.ticket-card + .ticket-card { margin-top: 12px; }
+
+/* Dashboard hardening: keep the user dashboard close to the approved reference. */
+.dashboard-page .page-content {
+  background: #e8edf2 !important;
+}
+
+.dashboard-page .page-title > h3 {
+  color: #061323 !important;
+  display: block !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  margin: 0 0 16px !important;
+}
+
+.dashboard-page .tiles.blue { background-color: #0798d8 !important; background-image: none !important; }
+.dashboard-page .tiles.green { background-color: #11a99a !important; background-image: none !important; }
+.dashboard-page .tiles.red { background-color: #f25757 !important; background-image: none !important; }
+.dashboard-page .tiles.purple { background-color: #78628c !important; background-image: none !important; }
+
+.dashboard-page .tiles,
+.dashboard-page .tiles .tiles-body,
+.dashboard-page .tiles .row-fluid {
+  color: #fff !important;
+}
+
+.dashboard-page .tiles .heading,
+.dashboard-page .tiles .heading a,
+.dashboard-page .tiles .heading span {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.dashboard-page .visitor-graph-panel {
+  margin-top: 6px;
+}
+
+/* Header icon fixes: use font icons instead of the fragile legacy sprite. */
+.header .header-seperation .notifcation-center {
+  background: #060b12 !important;
+  margin-top: 12px !important;
+  margin-right: 15px !important;
+}
+
+.header .header-seperation .notifcation-center li a {
+  align-items: center;
+  display: flex !important;
+  height: 37px;
+  justify-content: center;
+  min-height: 37px !important;
+  padding: 0 !important;
+  width: 39px;
+}
+
+.rh-header-icon {
+  color: #fff;
+  font-size: 18px !important;
+  line-height: 1;
+}
+
+.header .header-quick-nav {
+  height: 60px;
+  padding-right: 10px;
+}
+
+.header .header-quick-nav .quick-section {
+  margin-top: 13px;
+}
+
+.header .header-quick-nav #user-options {
+  align-items: center;
+  display: flex !important;
+  height: 36px;
+  justify-content: center;
+  padding: 0 10px !important;
+}
+
+.rh-settings-icon {
+  color: #4b5563;
+  font-size: 18px !important;
+  line-height: 1;
+}
+
+#user-options:hover .rh-settings-icon,
+#user-options:focus .rh-settings-icon {
+  color: #111827;
+}
+
+/* Final header alignment: keep the white bar and blue brand on the same baseline. */
+.header,
+.header .navbar-inner,
+.header .header-seperation,
+.header .header-quick-nav {
+  min-height: 78px !important;
+}
+
+.header .navbar-inner {
+  background: #fff !important;
+  display: block;
+}
+
+.header .header-seperation {
+  align-items: center;
+  display: flex !important;
+  justify-content: space-between;
+}
+
+.header .resolvehub-brand {
+  align-items: center;
+  display: flex;
+  min-height: 78px !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.header .header-seperation .notifcation-center {
+  align-items: center;
+  display: flex !important;
+  height: 78px;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+.header .header-quick-nav {
+  align-items: center;
+  display: flex !important;
+  justify-content: flex-end;
+  padding-right: 10px !important;
+}
+
+.header .header-quick-nav .pull-right,
+.header .header-quick-nav .quick-section,
+.header .header-quick-nav .quicklinks {
+  align-items: center;
+  display: flex !important;
+  height: 78px;
+  margin: 0 !important;
+}
+
+.header .header-quick-nav #user-options {
+  height: 78px;
+}
+
+/* Keep the account menu closed until the settings button is clicked. */
+.header .header-quick-nav .dropdown-menu {
+  display: none !important;
+}
+
+.header .header-quick-nav .open > .dropdown-menu {
+  display: block !important;
 }
