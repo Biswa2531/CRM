@@ -14,6 +14,29 @@ The system improves communication between customers and support teams while prov
 
 ---
 
+# 🔑 Default Login Credentials
+
+The project comes with pre-configured user accounts for testing and demonstration purposes.
+
+| Role | Username / Email | Password |
+|------|-------------------|----------|
+| Administrator | `admin` | `Test@123` |
+| Customer/User | `amitk@gmail.com` | `Test@123` |
+
+> **Note:** Change the default passwords after deployment for security reasons.
+
+---
+
+# 🌐 Login URLs
+
+| Module | URL |
+|---------|-----|
+| Admin Login | `http://localhost/CRM/admin/login.php` |
+| Customer Login | `http://localhost/CRM/auth/login.php` |
+
+---
+---
+
 # ✨ Features
 
 ### 👨‍💼 Administrator
