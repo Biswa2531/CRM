@@ -1,21 +1,4 @@
-# <h1 align="center">🚀 ResolveHub CRM</h1>
-
-<p align="center">
-  <b>Customer Relationship Management System</b><br>
-  A Full Stack PHP & MySQL Web Application for Customer Complaint and Support Ticket Management
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
-  <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-  <img src="https://img.shields.io/badge/XAMPP-Local%20Server-FB7A24?style=for-the-badge&logo=xampp&logoColor=white">
-  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Project-Educational-blue?style=for-the-badge">
-</p>
-
----
+# 🚀 ResolveHub CRM
 
 # 📖 Overview
 
