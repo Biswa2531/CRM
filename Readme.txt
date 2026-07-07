@@ -1,29 +1,90 @@
-# ResolveHub CRM - Customer Relationship Management System
+# <h1 align="center">🚀 ResolveHub CRM</h1>
 
-![PHP](https://img.shields.io/badge/PHP-8.x-blue)
-![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![License](https://img.shields.io/badge/License-MIT-green)
+<p align="center">
+  <b>Customer Relationship Management System</b><br>
+  A Full Stack PHP & MySQL Web Application for Customer Complaint and Support Ticket Management
+</p>
 
-## 📌 Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/XAMPP-Local%20Server-FB7A24?style=for-the-badge&logo=xampp&logoColor=white">
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Project-Educational-blue?style=for-the-badge">
+</p>
 
-ResolveHub CRM is a web-based Customer Relationship Management (CRM) system developed to simplify customer complaint handling and support ticket management. The application enables organizations to efficiently manage customers, support staff, complaints, ticket assignments, and resolution tracking through a centralized dashboard.
+---
 
-The system improves communication between customers and support teams while providing administrators with complete control over user management, ticket monitoring, reporting, and system operations.
+# 📖 Overview
+
+ResolveHub CRM is a web-based **Customer Relationship Management (CRM)** system developed using **PHP, MySQL, Bootstrap, HTML, CSS, and JavaScript**. The system is designed to simplify customer complaint handling, support ticket management, and communication between customers, support staff, and administrators.
+
+It provides a centralized platform where customers can register complaints, administrators can assign support tickets, and staff members can resolve issues efficiently while maintaining complete tracking and reporting.
+
+---
+
+# 🎯 Project Objectives
+
+- Digitize customer complaint management.
+- Reduce manual paperwork.
+- Improve customer support efficiency.
+- Track complaint progress in real time.
+- Assign tickets to support staff.
+- Generate reports for administrators.
+- Maintain secure user authentication.
+- Demonstrate Full Stack Web Development concepts.
+
+---
+
+# ✨ Key Features
+
+## 👨‍💼 Administrator
+
+- Secure Login
+- Dashboard Analytics
+- Customer Management
+- Staff Management
+- Complaint Management
+- Ticket Assignment
+- Ticket Status Tracking
+- User Role Management
+- Report Generation
+- Profile Management
+
+---
+
+## 👥 Customer
+
+- User Registration
+- Secure Login
+- Raise Complaints
+- Submit Support Tickets
+- View Complaint History
+- Track Complaint Status
+- Update Profile
+
+---
+
+## 👨‍🔧 Support Staff
+
+- Login Authentication
+- Assigned Ticket Management
+- Update Complaint Status
+- Add Resolution Notes
+- Close Resolved Complaints
 
 ---
 
 # 🔑 Default Login Credentials
 
-The project comes with pre-configured user accounts for testing and demonstration purposes.
-
 | Role | Username / Email | Password |
-|------|-------------------|----------|
+|------|------------------|----------|
 | Administrator | `admin` | `Test@123` |
-| Customer/User | `amitk@gmail.com` | `Test@123` |
+| Customer | `amitk@gmail.com` | `Test@123` |
 
-> **Note:** Change the default passwords after deployment for security reasons.
+> **Note:** Change the default credentials after deployment.
 
 ---
 
@@ -35,61 +96,36 @@ The project comes with pre-configured user accounts for testing and demonstratio
 | Customer Login | `http://localhost/CRM/auth/login.php` |
 
 ---
----
-
-# ✨ Features
-
-### 👨‍💼 Administrator
-
-* Secure Admin Login
-* Dashboard with Analytics
-* Customer Management
-* Staff Management
-* Complaint Management
-* Ticket Assignment
-* Ticket Status Tracking
-* User Role Management
-* Reports Generation
-* Profile Management
-
-### 👥 Customer
-
-* User Registration
-* Secure Login
-* Create Support Tickets
-* Submit Complaints
-* View Complaint History
-* Track Ticket Status
-* Update Profile
-
-### 👨‍🔧 Support Staff
-
-* Login Authentication
-* View Assigned Tickets
-* Update Ticket Status
-* Add Resolution Notes
-* Close Resolved Complaints
-
----
 
 # 🛠 Technology Stack
 
-| Technology | Purpose                   |
-| ---------- | ------------------------- |
-| PHP        | Backend Development       |
-| MySQL      | Database                  |
-| HTML5      | Structure                 |
-| CSS3       | Styling                   |
-| Bootstrap  | Responsive UI             |
-| JavaScript | Client-side Functionality |
-| AJAX       | Dynamic Requests          |
-| XAMPP      | Local Development Server  |
+| Technology | Purpose |
+|------------|---------|
+| PHP | Backend Development |
+| MySQL | Database |
+| HTML5 | Page Structure |
+| CSS3 | Styling |
+| Bootstrap 5 | Responsive UI |
+| JavaScript | Client-side Scripting |
+| AJAX | Dynamic Requests |
+| XAMPP | Local Server |
+
+---
+
+# 💻 System Requirements
+
+- Windows 10/11
+- XAMPP 8.x
+- PHP 8.x
+- MySQL
+- Modern Web Browser
+- Visual Studio Code (Recommended)
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 CRM/
 │
 ├── assets/
@@ -98,165 +134,127 @@ CRM/
 │   └── images/
 │
 ├── config/
-│   └── database configuration
+│   └── db.php
 │
 ├── includes/
-│   ├── header
-│   ├── sidebar
-│   ├── navbar
-│   └── footer
+│   ├── header.php
+│   ├── navbar.php
+│   ├── sidebar.php
+│   └── footer.php
 │
 ├── admin/
-│   ├── Dashboard
-│   ├── Customers
-│   ├── Complaints
-│   ├── Staff
-│   └── Reports
+│   ├── dashboard/
+│   ├── customers/
+│   ├── complaints/
+│   ├── staff/
+│   └── reports/
 │
 ├── customer/
-│   ├── Dashboard
-│   ├── Raise Complaint
-│   └── Track Ticket
+│   ├── dashboard/
+│   ├── complaints/
+│   └── profile/
 │
 ├── staff/
-│   ├── Dashboard
-│   ├── Assigned Tickets
-│   └── Ticket Updates
+│   ├── dashboard/
+│   ├── tickets/
+│   └── profile/
 │
 ├── auth/
-│   ├── Login
-│   ├── Registration
-│   └── Logout
+│   ├── login.php
+│   ├── register.php
+│   └── logout.php
+│
+├── database/
+│   └── crm.sql
 │
 └── index.php
 ```
 
 ---
 
-# ⚙ Installation
+# ⚙️ Installation Guide
 
-## 1. Clone the Repository
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/ResolveHub-CRM.git
 ```
 
-or download the ZIP file and extract it.
+or download the ZIP file.
 
 ---
 
-## 2. Move Project
+## 2️⃣ Move the Project
 
 Copy the project folder into
 
-```
-xampp/htdocs/
+```text
+C:\xampp\htdocs\
 ```
 
 Example
 
-```
+```text
 C:\xampp\htdocs\CRM
 ```
 
 ---
 
-## 3. Start XAMPP
+## 3️⃣ Start XAMPP
 
-Start
+Start the following services:
 
-* Apache
-* MySQL
+- Apache
+- MySQL
 
 ---
 
-## 4. Create Database
+## 4️⃣ Create Database
 
 Open
 
-```
+```text
 http://localhost/phpmyadmin
 ```
 
-Create a database
+Create a database named
 
-```
+```text
 crm
 ```
 
-Import the SQL file provided with the project.
+Import the provided SQL file.
 
 ---
 
-## 5. Configure Database
+## 5️⃣ Configure Database
 
-Open the database configuration file and update
+Update your database configuration file.
 
-```php
-Host
-Username
-Password
-Database Name
-```
-
-Example
+Example:
 
 ```php
-localhost
-root
-""
-crm
+$host="localhost";
+$user="root";
+$password="";
+$database="crm";
 ```
 
 ---
 
-## 6. Run the Project
+## 6️⃣ Run the Application
 
-Open
+Open your browser and visit
 
-```
+```text
 http://localhost/CRM
 ```
 
 ---
 
-# 👥 User Modules
+# 🔄 Project Workflow
 
-## Administrator
-
-* Manage Users
-* Manage Customers
-* Manage Staff
-* View Dashboard
-* Assign Tickets
-* Generate Reports
-* System Configuration
-
----
-
-## Customer
-
-* Register Account
-* Login
-* Raise Complaint
-* View Complaint History
-* Track Complaint Status
-
----
-
-## Support Staff
-
-* Login
-* View Assigned Tickets
-* Update Complaint Status
-* Add Resolution Notes
-* Close Tickets
-
----
-
-# 🔄 Workflow
-
-```
+```text
 Customer Registration
         │
         ▼
@@ -278,50 +276,134 @@ Assign Ticket to Staff
 Staff Resolves Complaint
         │
         ▼
-Status Updated
+Update Ticket Status
         │
         ▼
-Customer Tracks Resolution
+Customer Tracks Complaint
 ```
+
+---
+
+# 👥 User Modules
+
+## Administrator
+
+- Dashboard
+- Customer Management
+- Staff Management
+- Complaint Management
+- Ticket Assignment
+- Reports
+- System Settings
+
+---
+
+## Customer
+
+- Register
+- Login
+- Raise Complaint
+- Complaint History
+- Track Ticket
+- Update Profile
+
+---
+
+## Support Staff
+
+- Login
+- Assigned Tickets
+- Ticket Updates
+- Resolution Notes
+- Close Tickets
 
 ---
 
 # 📊 Database
 
-The project uses MySQL to store
+The application stores the following information:
 
-* Customer Information
-* User Accounts
-* Staff Details
-* Complaints
-* Support Tickets
-* Ticket Status
-* Reports
+- Customer Details
+- Staff Details
+- User Accounts
+- Complaints
+- Support Tickets
+- Ticket Status
+- Reports
 
 ---
 
 # 🔒 Security Features
 
-* User Authentication
-* Session Management
-* Password Protection
-* Role-Based Access Control
-* Form Validation
-* SQL Injection Prevention
-* Input Validation
+- User Authentication
+- Session Management
+- Role-Based Access Control
+- Password Hashing
+- Form Validation
+- SQL Injection Prevention
+- Input Validation
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots inside a **screenshots** folder.
+
+```text
+screenshots/
+│
+├── home.png
+├── admin-dashboard.png
+├── customer-dashboard.png
+├── complaints.png
+├── tickets.png
+└── reports.png
+```
+
+Example:
+
+```markdown
+## Home Page
+
+![Home](screenshots/home.png)
+
+## Admin Dashboard
+
+![Dashboard](screenshots/admin-dashboard.png)
+
+## Customer Dashboard
+
+![Customer](screenshots/customer-dashboard.png)
+```
+
+---
+
+# 🌟 Project Highlights
+
+- Full Stack PHP Application
+- Customer Complaint Management
+- Ticket Assignment System
+- Role-Based Authentication
+- Dashboard Analytics
+- CRUD Operations
+- Responsive Bootstrap Interface
+- Secure Session Management
+- MySQL Database Integration
+- Clean MVC-like Folder Structure
 
 ---
 
 # 🚀 Future Enhancements
 
-* Email Notifications
-* SMS Alerts
-* Live Chat Support
-* AI-based Ticket Categorization
-* Mobile Application
-* Data Analytics Dashboard
-* REST API Integration
-* Cloud Deployment
+- Email Notifications
+- SMS Alerts
+- Live Chat Support
+- AI-based Ticket Categorization
+- Mobile Application
+- REST API
+- Cloud Deployment
+- Analytics Dashboard
+- Multi-language Support
 
 ---
 
@@ -329,16 +411,36 @@ The project uses MySQL to store
 
 Contributions are welcome.
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to your branch
-5. Create a Pull Request
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Push your branch.
+5. Create a Pull Request.
 
 ---
 
-# 👨‍💻 Developer
+# 👨‍💻 Author
 
-**Developed as a Full Stack CRM Project**
+**Biswajit Rout**
 
-ResolveHub CRM is designed for educational purposes and demonstrates full-stack web development concepts including authentication, role management, CRUD operations, complaint tracking, and customer support management.
+**MCA Student | Full Stack Web Developer**
+
+📧 Email: your-email@example.com
+
+💼 LinkedIn: https://linkedin.com/in/your-profile
+
+🐙 GitHub: https://github.com/yourusername
+
+---
+
+# 📄 License
+
+This project is developed for **educational and academic purposes only**.
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a **⭐ Star** on GitHub.
+
+Your support motivates future improvements and helps others discover the project.
